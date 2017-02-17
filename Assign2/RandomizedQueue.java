@@ -15,7 +15,6 @@ public class RandomizedQueue<Item> implements Iterable<Item>
      
     // cast needed since no generic array creation in Java
     @SuppressWarnings("unchecked")
-    
     public RandomizedQueue()       // construct an empty randomized queue
     {
         q = (Item[]) new Object[2];
@@ -39,10 +38,10 @@ public class RandomizedQueue<Item> implements Iterable<Item>
         for (int i = 0; i < N; i++)
         {
             temp[i] = q[(first + i) % q.length];
-            q = temp;
-            first = 0;
-            last = N;
         }
+        q = temp;
+        first = 0;
+        last = N;
     }
     
     public void enqueue(Item item) // add the item
